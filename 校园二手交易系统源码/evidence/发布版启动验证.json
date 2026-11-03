@@ -1,0 +1,13 @@
+{
+  "testedAt": "2026-10-28",
+  "binary": "app/CampusMarket.exe",
+  "usesDeveloperSdk": false,
+  "testDatabase": "isolated copy of demo database",
+  "startup": "Windows window appeared; application responded to HTTP on loopback",
+  "publicDemoProducts": 3,
+  "baselineRegression": "37/37",
+  "adaptedPublishedRegression": "37/37",
+  "afterWindowCloseServiceActive": false,
+  "persistedUsers": 6,
+  "databaseIntegrityAfterClose": "ok"
+}

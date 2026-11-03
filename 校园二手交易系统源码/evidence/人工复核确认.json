@@ -1,0 +1,19 @@
+{
+  "confirmationDate": "2026-10-28",
+  "performedBy": "提交人",
+  "evidenceType": "提交人在对话中自述确认",
+  "originalStatement": "检查完毕，每一项都成正常完好",
+  "checklist": [
+    "登录及账号密码控件",
+    "商品浏览和详情朗读",
+    "商品发布、字段及图片选择",
+    "空白提交和价格异常提示",
+    "弹窗退出与焦点恢复",
+    "买家申请、卖家接受、买家确认完成",
+    "高对比度界面可辨认性"
+  ],
+  "reportedResult": "各项正常",
+  "screenReaderAndVersion": "未单独提供",
+  "recordingProvided": false,
+  "inferredVerbatimSpeech": false
+}

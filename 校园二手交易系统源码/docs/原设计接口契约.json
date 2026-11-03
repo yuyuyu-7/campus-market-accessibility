@@ -1,0 +1,1690 @@
+{
+  "contractVersion": "1.0",
+  "kind": "接口契约实例集，非OpenAPI规范，也非实现或实测结果",
+  "baseUrl": "http://127.0.0.1:5078",
+  "transport": "HTTP on loopback only",
+  "contentType": "application/json; charset=utf-8",
+  "allEndpoints": [
+    {
+      "operationId": "U01",
+      "method": "POST",
+      "path": "/api/v1/users",
+      "permission": "游客可用",
+      "headers": {
+        "Content-Type": "application/json",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "account": "seller_a",
+        "password": "Example123!",
+        "nickname": "卖家A",
+        "contact": "校园邮箱a@example.edu"
+      },
+      "success": {
+        "httpStatus": 201,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "userId": "u-a"
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 400,
+          "body": {
+            "code": "INVALID_JSON",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "ACCOUNT_EXISTS",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "REQUIRED_FIELD",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "U02-login",
+      "method": "POST",
+      "path": "/api/v1/sessions",
+      "permission": "游客可用",
+      "headers": {
+        "Content-Type": "application/json",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "account": "seller_a",
+        "password": "Example123!"
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "token": "opaque-example",
+            "expiresIn": 1800
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "INVALID_CREDENTIALS",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "REQUIRED_FIELD",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 429,
+          "body": {
+            "code": "TOO_MANY_ATTEMPTS",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "U02-logout",
+      "method": "DELETE",
+      "path": "/api/v1/session",
+      "permission": "已登录本人",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {},
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "revoked": true
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "U03-read",
+      "method": "GET",
+      "path": "/api/v1/me",
+      "permission": "已登录本人",
+      "headers": {
+        "Authorization": "Bearer <token>"
+      },
+      "queryExample": {},
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "u-a",
+            "nickname": "卖家A",
+            "contact": "校园邮箱a@example.edu",
+            "version": 1
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "U03-write",
+      "method": "PATCH",
+      "path": "/api/v1/me",
+      "permission": "已登录本人",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "nickname": "卖家A",
+        "contact": "a@example.edu",
+        "version": 1
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "u-a",
+            "nickname": "卖家A",
+            "contact": "a@example.edu",
+            "version": 2
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P01-image",
+      "method": "POST",
+      "path": "/api/v1/images",
+      "permission": "已登录用户",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "fileName": "book.png",
+        "mimeType": "image/png",
+        "contentBase64": "<真实PNG的base64内容，示意占位不可直接调用>"
+      },
+      "success": {
+        "httpStatus": 201,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "imageId": "img-a1",
+            "sizeBytes": 12345,
+            "mimeType": "image/png"
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 413,
+          "body": {
+            "code": "IMAGE_TOO_LARGE",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 415,
+          "body": {
+            "code": "IMAGE_FORMAT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "IMAGE_DIMENSIONS",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P01",
+      "method": "POST",
+      "path": "/api/v1/products",
+      "permission": "已登录用户，图片属本人",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "title": "软件工程教材",
+        "category": "教材",
+        "description": "少量笔记，校内当面交接",
+        "priceCents": 1800,
+        "imageIds": [
+          "img-a1"
+        ]
+      },
+      "success": {
+        "httpStatus": 201,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "p-101",
+            "status": "待审核",
+            "version": 1
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "IMAGE_NOT_OWNED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "REQUIRED_FIELD",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "PRICE_INVALID",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "IMAGE_COUNT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 404,
+          "body": {
+            "code": "IMAGE_NOT_FOUND",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P02-list",
+      "method": "GET",
+      "path": "/api/v1/products",
+      "permission": "游客可用",
+      "headers": {},
+      "queryExample": {
+        "keyword": "教材",
+        "category": "教材",
+        "page": 1,
+        "pageSize": 20
+      },
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "items": [
+              {
+                "id": "p-101",
+                "title": "软件工程教材",
+                "category": "教材",
+                "description": "少量笔记，校内当面交接",
+                "priceCents": 1800,
+                "status": "在售",
+                "sellerNickname": "卖家A",
+                "imageIds": [
+                  "img-a1"
+                ],
+                "version": 2
+              }
+            ],
+            "page": 1,
+            "pageSize": 20,
+            "total": 1
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "QUERY_INVALID",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P02-detail",
+      "method": "GET",
+      "path": "/api/v1/products/{id}",
+      "permission": "游客可用，仅公开商品",
+      "headers": {},
+      "queryExample": {},
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "p-101",
+            "title": "软件工程教材",
+            "category": "教材",
+            "description": "少量笔记，校内当面交接",
+            "priceCents": 1800,
+            "status": "在售",
+            "sellerNickname": "卖家A",
+            "imageIds": [
+              "img-a1"
+            ],
+            "version": 2
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 404,
+          "body": {
+            "code": "NOT_FOUND",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P02-image",
+      "method": "GET",
+      "path": "/api/v1/images/{id}",
+      "permission": "游客可用，仅关联公开在售商品；所有者可读本人附件",
+      "headers": {},
+      "queryExample": {},
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "imageId": "img-a1",
+            "mimeType": "image/png",
+            "contentBase64": "<真实图片编码>"
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 404,
+          "body": {
+            "code": "NOT_FOUND",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P03-list",
+      "method": "GET",
+      "path": "/api/v1/me/products",
+      "permission": "已登录本人",
+      "headers": {
+        "Authorization": "Bearer <token>"
+      },
+      "queryExample": {
+        "page": 1,
+        "pageSize": 20
+      },
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "items": [
+              {
+                "id": "p-101",
+                "status": "待审核",
+                "version": 1
+              }
+            ],
+            "page": 1,
+            "pageSize": 20,
+            "total": 1
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P03-edit",
+      "method": "PATCH",
+      "path": "/api/v1/products/{id}",
+      "permission": "所有者；允许状态且无待处理申请",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "title": "软件工程教材",
+        "category": "教材",
+        "description": "少量笔记，校内当面交接",
+        "priceCents": 1800,
+        "imageIds": [
+          "img-a1"
+        ],
+        "version": 2
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "p-101",
+            "status": "待审核",
+            "version": 3
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "P03-withdraw",
+      "method": "POST",
+      "path": "/api/v1/products/{id}/withdraw",
+      "permission": "所有者；待审核/审核驳回/在售",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "version": 2
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "p-101",
+            "status": "已下架",
+            "version": 3
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T01",
+      "method": "POST",
+      "path": "/api/v1/trades",
+      "permission": "已登录非商品所有者；在售",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "productId": "p-101",
+        "productVersion": 2
+      },
+      "success": {
+        "httpStatus": 201,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "t-1",
+            "productId": "p-101",
+            "status": "待处理",
+            "version": 1
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T02-accept",
+      "method": "POST",
+      "path": "/api/v1/trades/{id}/accept",
+      "permission": "商品卖家；交易待处理",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "version": 1,
+        "productVersion": 2
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "t-1",
+            "status": "已接受",
+            "version": 2,
+            "productVersion": 3
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T02-reject",
+      "method": "POST",
+      "path": "/api/v1/trades/{id}/reject",
+      "permission": "商品卖家；交易待处理",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "version": 1,
+        "productVersion": 2
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "t-1",
+            "status": "已拒绝",
+            "version": 2,
+            "productVersion": 2
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T03-list",
+      "method": "GET",
+      "path": "/api/v1/trades",
+      "permission": "已登录交易参与者",
+      "headers": {
+        "Authorization": "Bearer <token>"
+      },
+      "queryExample": {
+        "role": "buyer",
+        "page": 1,
+        "pageSize": 20
+      },
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "items": [
+              {
+                "id": "t-1",
+                "productId": "p-101",
+                "status": "待处理",
+                "version": 1
+              }
+            ],
+            "page": 1,
+            "pageSize": 20,
+            "total": 1
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T03-detail",
+      "method": "GET",
+      "path": "/api/v1/trades/{id}",
+      "permission": "仅交易双方",
+      "headers": {
+        "Authorization": "Bearer <token>"
+      },
+      "queryExample": {},
+      "requestBodyExample": null,
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "t-1",
+            "productId": "p-101",
+            "status": "已接受",
+            "titleSnapshot": "软件工程教材",
+            "priceSnapshot": 1800,
+            "version": 2,
+            "productVersion": 3,
+            "counterpartyContact": "a@example.edu"
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T03-cancel",
+      "method": "POST",
+      "path": "/api/v1/trades/{id}/cancel",
+      "permission": "买家本人且待处理",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "version": 1
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "t-1",
+            "status": "已取消",
+            "version": 2
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    },
+    {
+      "operationId": "T04",
+      "method": "POST",
+      "path": "/api/v1/trades/{id}/complete",
+      "permission": "买家本人且已接受",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer <token>",
+        "Idempotency-Key": "uuid-example"
+      },
+      "queryExample": {},
+      "requestBodyExample": {
+        "version": 2,
+        "productVersion": 3
+      },
+      "success": {
+        "httpStatus": 200,
+        "body": {
+          "code": "OK",
+          "message": "成功",
+          "data": {
+            "id": "t-1",
+            "status": "已完成",
+            "version": 3,
+            "productStatus": "已售出",
+            "productVersion": 4
+          },
+          "requestId": "req-example"
+        }
+      },
+      "errorExamples": [
+        {
+          "httpStatus": 401,
+          "body": {
+            "code": "AUTH_REQUIRED",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 403,
+          "body": {
+            "code": "FORBIDDEN",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "STATE_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 422,
+          "body": {
+            "code": "VALIDATION_ERROR",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "DUPLICATE_SUBMIT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        },
+        {
+          "httpStatus": 409,
+          "body": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "请求被拒绝",
+            "data": null,
+            "requestId": "req-example",
+            "errors": []
+          }
+        }
+      ]
+    }
+  ],
+  "globalRules": {
+    "writes": "所有写请求都要求Idempotency-Key；匿名写请求另带X-Client-Id随机标识",
+    "idempotency": "同主体+方法路径+键30秒原子去重；同体重复409 DUPLICATE_SUBMIT，异体409 IDEMPOTENCY_CONFLICT，不重复写业务；成功过可附resourceId。新键仍须满足业务唯一性。",
+    "time": "UTC ISO8601存储，界面按Asia/Shanghai显示",
+    "money": "priceCents JSON整数，1..1000000；不接受数字字符串或小数",
+    "null": "必填字段缺失、null或去空格空串均422",
+    "unknownFields": "拒绝未知字段422，禁止客户端传userId、sellerId、buyerId或status",
+    "image": "仅JPEG/PNG；扩展名、MIME、解码结果一致；每图≤2097152字节且宽高各≤4096；每商品1..3图；JSON请求上限3145728字节；base64严格解码，非法编码422",
+    "session": "密码经成熟带盐派生实现；随机会话令牌摘要存库，空闲1800秒失效，退出撤销；登录限速为同账号或来源5分钟失败5次后暂锁5分钟",
+    "privacy": "公开商品不含联系方式；已接受或已完成交易双方可见对方联系方式；待处理不返回该字段",
+    "pagination": "page正整数，pageSize 1..50；默认20；稳定排序createdAt降序、id降序",
+    "version": "整数递增，写请求须带资源期望版本；同事务条件更新，冲突409",
+    "getBody": "GET无请求体；参数在query或path，响应仍为JSON",
+    "requestId": "服务端为每次请求生成，错误不含堆栈",
+    "storageBusy": "锁忙重试后HTTP503 STORAGE_BUSY；不是400或成功",
+    "order": "鉴权→请求大小/语法→幂等→字段/资源权限/状态→事务；某些状态码可按路由细化但不能擅改"
+  },
+  "healthProbe": {
+    "method": "GET",
+    "path": "/ready",
+    "requestBodyExample": null,
+    "success": {
+      "httpStatus": 200,
+      "body": {
+        "code": "OK",
+        "message": "成功",
+        "data": {
+          "ready": true,
+          "database": "read_write_ok"
+        },
+        "requestId": "req-example"
+      }
+    },
+    "failure": {
+      "httpStatus": 503,
+      "body": {
+        "code": "NOT_READY",
+        "message": "请求被拒绝",
+        "data": null,
+        "requestId": "req-example",
+        "errors": []
+      }
+    },
+    "permission": "本机探测",
+    "successCriteria": "1秒内200且独立probe表读写回滚成功"
+  },
+  "changeControl": "变更先记录影响，由客户端/服务端/测试责任方提前沟通确认；单人逐项自审；破坏性变更升v2；禁止私自改动契约。"
+}

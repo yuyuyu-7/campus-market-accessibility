@@ -1,0 +1,80 @@
+[
+  {
+    "file": "src/CampusMarket.sln",
+    "baselineSha256": "27f3de456d3a90c1d17d58ebd0a2fad5e03623fdc2ffb9776fbd56169fbe5028",
+    "adaptedSha256": "27f3de456d3a90c1d17d58ebd0a2fad5e03623fdc2ffb9776fbd56169fbe5028",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Core/Campus.Core.csproj",
+    "baselineSha256": "353809367201f4c18664096c4fb5666e8b4a765363ff4102b242028d4730cd9c",
+    "adaptedSha256": "353809367201f4c18664096c4fb5666e8b4a765363ff4102b242028d4730cd9c",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Core/Models.cs",
+    "baselineSha256": "af67f6bada149dc7a4db7cb9f670efa42e54c66acbefbef764ca1f2511b9bd30",
+    "adaptedSha256": "af67f6bada149dc7a4db7cb9f670efa42e54c66acbefbef764ca1f2511b9bd30",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Desktop/ApiClient.cs",
+    "baselineSha256": "e131b5cda76ec1b4cc7e42b762be23aede240e92f891349f236ff5df65c62a13",
+    "adaptedSha256": "e131b5cda76ec1b4cc7e42b762be23aede240e92f891349f236ff5df65c62a13",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Desktop/Campus.Desktop.csproj",
+    "baselineSha256": "084fee1f099ac1d984042b75a988b3f1b76113d2beccaed3a158b9c447677b57",
+    "adaptedSha256": "084fee1f099ac1d984042b75a988b3f1b76113d2beccaed3a158b9c447677b57",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Desktop/MainWindow.cs",
+    "baselineSha256": "49a66bc4d9a5a3aecb4c954806d7f891104fe3067ba29a94278437e9482359bd",
+    "adaptedSha256": "460b9517f021267dac81eb092fb349fa23aeb14c464c96518d25c8e91d897108",
+    "changed": true
+  },
+  {
+    "file": "src/Campus.Desktop/Program.cs",
+    "baselineSha256": "31d895d37777f5184974bad337c941b9976969e0b9847ba897de92f758eab393",
+    "adaptedSha256": "31d895d37777f5184974bad337c941b9976969e0b9847ba897de92f758eab393",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Desktop/Ui.cs",
+    "baselineSha256": "e5e326a88609d76cfdcc9c212fe832c5f779d224fa73dd89accf5554403cebd6",
+    "adaptedSha256": "0d39a9af07e9695d1e5830377ddb9f716f6d3d14392a8fc1f42276c42a21129e",
+    "changed": true
+  },
+  {
+    "file": "src/Campus.Server/ApiHost.cs",
+    "baselineSha256": "c18aea8828921b05f761e65dd1fa846e8cdfc0b1437fa95eea3f6076b7cbdcc8",
+    "adaptedSha256": "c18aea8828921b05f761e65dd1fa846e8cdfc0b1437fa95eea3f6076b7cbdcc8",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Server/Campus.Server.csproj",
+    "baselineSha256": "283508087c5c8ced6fe95b86eae4453fa166808f934f69bbbd02cc014bfb9758",
+    "adaptedSha256": "283508087c5c8ced6fe95b86eae4453fa166808f934f69bbbd02cc014bfb9758",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Server/Database.cs",
+    "baselineSha256": "385f58f67a7f495ddf8b951f8c92316b4a2358643c5b97dd0dfddcdc4536b74f",
+    "adaptedSha256": "385f58f67a7f495ddf8b951f8c92316b4a2358643c5b97dd0dfddcdc4536b74f",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Server/GlobalUsings.cs",
+    "baselineSha256": "9eb56b713f4bd450c169f140e74ff7b6d5e456f3742a30188b947223d01628e4",
+    "adaptedSha256": "9eb56b713f4bd450c169f140e74ff7b6d5e456f3742a30188b947223d01628e4",
+    "changed": false
+  },
+  {
+    "file": "src/Campus.Server/Services.cs",
+    "baselineSha256": "e5419b5ee0848f45de25012ec9d5d7218083717238f74a95917d0d450f98ec21",
+    "adaptedSha256": "e5419b5ee0848f45de25012ec9d5d7218083717238f74a95917d0d450f98ec21",
+    "changed": false
+  }
+]

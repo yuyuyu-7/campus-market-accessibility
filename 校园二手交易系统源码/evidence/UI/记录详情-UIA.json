@@ -1,0 +1,112 @@
+[
+  {
+    "type": "FormWindow",
+    "name": "记录详情",
+    "role": "Window",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBlock",
+    "name": "",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "Button",
+    "name": "关闭",
+    "role": "Button",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "关闭"
+  },
+  {
+    "type": "TextBlock",
+    "name": "关闭(_C)",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "ScrollViewer",
+    "name": "",
+    "role": "Pane",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBlock",
+    "name": "界面测试教材",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBlock",
+    "name": "价格：¥18.00\n分类：教材\n状态：在售\n卖家：界面测试卖家\n描述：封面完整，带少量笔记，校内当面交接。\n审核说明：",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "Image",
+    "name": "商品图片：界面测试教材。封面完整，带少量笔记，校内当面交接。",
+    "role": "Image",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "商品图片：界面测试教材。封面完整，带少量笔记，校内当面交接。"
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "VerticalScrollBar"
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "HorizontalScrollBar"
+  }
+]

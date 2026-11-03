@@ -1,0 +1,19 @@
+﻿校园二手交易系统源码与测试证据
+
+构建环境：Windows x64，.NET 8 SDK；
+
+在本包根目录执行：
+  dotnet build src/CampusMarket.sln -c Release
+  dotnet run --project src/Campus.Desktop/Campus.Desktop.csproj -- --db demo/campus.db
+
+演示账号：seller_demo、buyer_demo、buyer2_demo
+密码均为：Course123!
+
+目录：
+  src       适配版源码
+  baseline  基础版源码快照
+  tests     可执行测试脚本及界面测试工程
+  evidence  实际测试资料、截图及源码差异
+  demo      初始演示数据库
+  docs      开发说明和接口设计
+  licenses  依赖许可

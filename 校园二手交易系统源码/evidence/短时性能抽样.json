@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-10-28 16:00:04",
+  "kind": "短时抽样，不是长时间压测或7天可用性验证",
+  "results": [
+    {
+      "function": "U01 注册",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 185.313,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "U02 登录",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 211.522,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "U03 资料读取",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 17.293,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "P01 商品发布",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 33.797,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "P02 商品浏览",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 36.23,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "P03 本人商品读取",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 10.761,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "T01 申请交易",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 39.28,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "T02 接受交易",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 32.769,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "T03 交易查询",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 25.223,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    },
+    {
+      "function": "T04 完成交易",
+      "samples": 20,
+      "concurrency": 5,
+      "p95Ms": 21.719,
+      "technicalSuccessRate": 1.0,
+      "errors": []
+    }
+  ],
+  "readinessProbeSamples": [
+    {
+      "ok": true,
+      "ms": 24.938
+    },
+    {
+      "ok": true,
+      "ms": 3.242
+    },
+    {
+      "ok": true,
+      "ms": 5.491
+    },
+    {
+      "ok": true,
+      "ms": 3.101
+    },
+    {
+      "ok": true,
+      "ms": 16.042
+    },
+    {
+      "ok": true,
+      "ms": 4.962
+    },
+    {
+      "ok": true,
+      "ms": 3.291
+    },
+    {
+      "ok": true,
+      "ms": 19.057
+    },
+    {
+      "ok": true,
+      "ms": 3.69
+    },
+    {
+      "ok": true,
+      "ms": 3.766
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+[
+  {
+    "type": "FormWindow",
+    "name": "个人资料",
+    "role": "Window",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBlock",
+    "name": "",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "Button",
+    "name": "保存",
+    "role": "Button",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "保存"
+  },
+  {
+    "type": "TextBlock",
+    "name": "保存(_S)",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "Button",
+    "name": "关闭",
+    "role": "Button",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "关闭"
+  },
+  {
+    "type": "TextBlock",
+    "name": "关闭(_C)",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "ScrollViewer",
+    "name": "",
+    "role": "Pane",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBlock",
+    "name": "账号：ui_73673774",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBlock",
+    "name": "昵称",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBox",
+    "name": "昵称",
+    "role": "Edit",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "昵称"
+  },
+  {
+    "type": "ScrollViewer",
+    "name": "",
+    "role": "Pane",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "VerticalScrollBar"
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "HorizontalScrollBar"
+  },
+  {
+    "type": "TextBlock",
+    "name": "联系方式",
+    "role": "Text",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "TextBox",
+    "name": "联系方式",
+    "role": "Edit",
+    "enabled": true,
+    "focusable": true,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "联系方式"
+  },
+  {
+    "type": "ScrollViewer",
+    "name": "",
+    "role": "Pane",
+    "enabled": true,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": ""
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "VerticalScrollBar"
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "HorizontalScrollBar"
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "VerticalScrollBar"
+  },
+  {
+    "type": "ScrollBar",
+    "name": "",
+    "role": "ScrollBar",
+    "enabled": false,
+    "focusable": false,
+    "password": false,
+    "help": "",
+    "live": "Off",
+    "id": "HorizontalScrollBar"
+  }
+]

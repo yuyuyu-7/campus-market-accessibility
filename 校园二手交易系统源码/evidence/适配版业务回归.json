@@ -1,0 +1,156 @@
+{
+  "baseUrl": "http://127.0.0.1:5084",
+  "timestamp": "2026-10-28 16:10:00",
+  "passed": 37,
+  "total": 37,
+  "tests": [
+    {
+      "name": "U01/U02 注册三个账号并登录",
+      "passed": true
+    },
+    {
+      "name": "E01 未登录提交被401拦截",
+      "passed": true
+    },
+    {
+      "name": "E02 必填字段空白被422拦截",
+      "passed": true
+    },
+    {
+      "name": "E03 图片扩展名/MIME不符被拦截",
+      "passed": true
+    },
+    {
+      "name": "E03 图片伪造内容被拦截",
+      "passed": true
+    },
+    {
+      "name": "E04 图片超过2MiB被拦截",
+      "passed": true
+    },
+    {
+      "name": "E05 非法价格 0",
+      "passed": true
+    },
+    {
+      "name": "E05 非法价格 -1",
+      "passed": true
+    },
+    {
+      "name": "E05 非法价格 1000001",
+      "passed": true
+    },
+    {
+      "name": "E05 非法价格 1.5",
+      "passed": true
+    },
+    {
+      "name": "E05 非法价格 1800",
+      "passed": true
+    },
+    {
+      "name": "E05 非法价格 None",
+      "passed": true
+    },
+    {
+      "name": "E06 重复提交与异体同键冲突",
+      "passed": true
+    },
+    {
+      "name": "未知字段/伪造卖家被拦截",
+      "passed": true
+    },
+    {
+      "name": "他人图片不可绑定",
+      "passed": true
+    },
+    {
+      "name": "异步审核公开与游客浏览",
+      "passed": true
+    },
+    {
+      "name": "公开详情不泄漏联系方式",
+      "passed": true
+    },
+    {
+      "name": "本人不能购买自己的商品",
+      "passed": true
+    },
+    {
+      "name": "不能修改他人商品",
+      "passed": true
+    },
+    {
+      "name": "过期版本拒绝",
+      "passed": true
+    },
+    {
+      "name": "换幂等键重复申请仍拦截",
+      "passed": true
+    },
+    {
+      "name": "待处理申请时禁止编辑",
+      "passed": true
+    },
+    {
+      "name": "第三人不能读取交易详情",
+      "passed": true
+    },
+    {
+      "name": "买家不能接受自己的申请",
+      "passed": true
+    },
+    {
+      "name": "接受后其他申请自动拒绝",
+      "passed": true
+    },
+    {
+      "name": "接受后买家可见对方联系方式",
+      "passed": true
+    },
+    {
+      "name": "交易中禁止下架",
+      "passed": true
+    },
+    {
+      "name": "完整交易完成与商品售出",
+      "passed": true
+    },
+    {
+      "name": "已售商品对游客隐藏",
+      "passed": true
+    },
+    {
+      "name": "敏感词审核驳回且不可公开",
+      "passed": true
+    },
+    {
+      "name": "取消、拒绝与下架一致性",
+      "passed": true
+    },
+    {
+      "name": "并发接受只能成功一次",
+      "passed": true
+    },
+    {
+      "name": "U03 资料修改",
+      "passed": true
+    },
+    {
+      "name": "U03 资料旧版本被拒绝",
+      "passed": true
+    },
+    {
+      "name": "非法分页被拦截",
+      "passed": true
+    },
+    {
+      "name": "数据库读写回滚探测",
+      "passed": true
+    },
+    {
+      "name": "退出后令牌立即失效",
+      "passed": true
+    }
+  ]
+}
