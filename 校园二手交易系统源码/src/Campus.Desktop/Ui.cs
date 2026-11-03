@@ -6,6 +6,7 @@ using System.Windows.Automation;
 using System.Windows.Automation.Peers;
 using System.Windows.Threading;
 namespace Campus.Desktop;
+// #ai辅助完成Announce WPF实时区域和UI Automation事件提示
 // 集中放置视图工厂；业务逻辑位于服务模块。
 public static class Ui {
  public static TextBlock Text(string s,double size=16)=>new(){Text=s,FontSize=size,TextWrapping=TextWrapping.Wrap,Margin=new Thickness(0,4,0,8)};
