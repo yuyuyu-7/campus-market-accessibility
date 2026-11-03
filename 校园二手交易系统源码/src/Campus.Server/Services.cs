@@ -22,7 +22,7 @@ public sealed class UserService(IEntityStore db) {
  public User? Authenticate(string token){if(string.IsNullOrEmpty(token))return null;var id=Digest(token);var s=db.Get<Session>(id);var now=DateTimeOffset.UtcNow.ToUnixTimeSeconds();if(s==null||now-s.LastSeen>=1800)return null;db.Put(id,s with{LastSeen=now});return db.Get<User>(s.UserId);}
  public object Update(User u,JsonObject o){Fields.Only(o,"nickname","contact","version");u=db.Get<User>(u.Id)!;Rules.Version(Fields.Int(o,"version"),u.Version);u=u with{Nickname=Fields.Text(o,"nickname",40),Contact=Fields.Text(o,"contact",100),Version=u.Version+1};db.Put(u.Id,u);return Public(u);}
 }
-#ai辅助完成ImageService.Upload 图片容量、格式一致性和实际解码校验
+// ai辅助完成ImageService.Upload 图片容量、格式一致性和实际解码校验
 public sealed class ImageService(IEntityStore db) {
  public object Upload(User u,JsonObject o){Fields.Only(o,"fileName","mimeType","contentBase64");var name=Fields.Text(o,"fileName",200);var mime=Fields.Text(o,"mimeType",40);var encoded=Fields.Text(o,"contentBase64",2800000);byte[] bytes;
  try{Rules.Need(!encoded.Any(char.IsWhiteSpace),"图片编码不能包含空白。");bytes=Convert.FromBase64String(encoded);}catch(FormatException){throw new RuleError(422,"IMAGE_FORMAT","图片编码无效。");}
@@ -33,7 +33,7 @@ public sealed class ImageService(IEntityStore db) {
  public object Read(string id,User? u){var p=db.Get<Picture>(id)??throw new RuleError(404,"NOT_FOUND","图片不存在。");Rules.Owner(p.OwnerId==u?.Id||db.All<Product>().Any(x=>x.Status=="在售"&&x.ImageIds.Contains(id)));return new{imageId=p.Id,p.MimeType,p.ContentBase64};}
 }
 public sealed class WordReviewer:ITextReviewer {public string? Check(string text)=>new[]{"违禁品","枪支","毒品"}.FirstOrDefault(text.Contains);}
-#ai辅助完成ProductService.Review 异步审核任务与版本状态判断
+// ai辅助完成ProductService.Review 异步审核任务与版本状态判断
 public sealed class ProductService(IEntityStore db):IProductForTrade {
  public Product Get(string id)=>db.Get<Product>(id)??throw new RuleError(404,"NOT_FOUND","商品不存在。");
  public object Public(Product p)=>new{p.Id,p.Title,p.Category,p.Description,p.PriceCents,p.ImageIds,p.Status,p.Version,p.CreatedAt,sellerNickname=db.Get<User>(p.SellerId)?.Nickname,p.ReviewReason};
@@ -45,7 +45,7 @@ public sealed class ProductService(IEntityStore db):IProductForTrade {
  public object Withdraw(User u,string id,JsonObject o){Fields.Only(o,"version");var p=Get(id);Rules.Owner(p.SellerId==u.Id);Rules.Version(Fields.Int(o,"version"),p.Version);Rules.State(new[]{"在售","待审核","审核驳回"}.Contains(p.Status));p=p with{Status="已下架",Version=p.Version+1};Save(p);foreach(var t in db.All<Trade>().Where(t=>t.ProductId==id&&t.Status=="待处理"))db.Put(t.Id,t with{Status="已拒绝",Version=t.Version+1});return Public(p);}
  public void Review(ITextReviewer reviewer){foreach(var j in db.All<ReviewJob>()){var p=db.Get<Product>(j.ProductId);if(p!=null&&p.Version==j.Version&&p.Status=="待审核"){var word=reviewer.Check(p.Title+" "+p.Description);Save(p with{Status=word==null?"在售":"审核驳回",ReviewReason=word==null?"":"包含不允许的词语，请修改后重提。",Version=p.Version+1});}db.Remove<ReviewJob>(j.Id);}}
 }
-#ai辅助完成TradeService.Act 交易角色、版本和状态转换逻辑。
+// ai辅助完成TradeService.Act 交易角色、版本和状态转换逻辑。
 public sealed class TradeService(IEntityStore db,IProductForTrade products) {
  public Trade Get(string id)=>db.Get<Trade>(id)??throw new RuleError(404,"NOT_FOUND","交易不存在。");
  public object Public(Trade t,User u){Rules.Owner(t.BuyerId==u.Id||t.SellerId==u.Id);var p=db.Get<Product>(t.ProductId)!;return new{t.Id,t.ProductId,t.TitleSnapshot,t.PriceSnapshot,t.Status,t.Version,t.CreatedAt,productVersion=p.Version,productStatus=p.Status,role=t.BuyerId==u.Id?"buyer":"seller",counterpartyContact=new[]{"已接受","已完成"}.Contains(t.Status)?db.Get<User>(t.BuyerId==u.Id?t.SellerId:t.BuyerId)?.Contact:null};}
